@@ -51,7 +51,7 @@ def names_deconstructor(names_df, head = False):
             names_df['NAME'] = names_df['NAME'].apply(lambda x: x[(substring):])
         
 #         this handles the length values
-        names_df['SUB_LENGTH'] = names_df['LENGTH'].apply(lambda x: (x-substring))
+        names_df['SUB_LENGTH'] = names_df['SUB_LENGTH'].apply(lambda x: (x-substring))
         
         names_df['PERCENT_LENGTH'] = 100*(names_df['SUB_LENGTH']/names_df['LENGTH'])
         
@@ -64,7 +64,7 @@ def names_deconstructor(names_df, head = False):
 #         print(names_df['COMPANYNAME'].unique())
 
 
-        substring += 1
+        # substring += 1
     
 #        this determines whether we should keep looping
         avg_pct_min = min(analysis['avg_pct_len'])
